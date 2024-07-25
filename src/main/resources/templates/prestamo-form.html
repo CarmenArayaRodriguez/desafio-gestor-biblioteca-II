@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Registrar Préstamo</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1 class="my-4">Registrar Préstamo</h1>
+    <form th:action="@{/prestamo}" method="post">
+        <div class="form-group">
+            <label for="libroId">ID del Libro:</label>
+            <input type="text" id="libroId" name="libroId" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="usuarioId">Email del Usuario:</label>
+            <input type="email" id="usuarioId" name="usuarioId" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Solicitar Préstamo</button>
+    </form>
+    <div th:if="${resultado}" class="mt-4">
+        <h2>Resultado:</h2>
+        <p th:text="${resultado}"></p>
+    </div>
+    <a th:href="@{/}" class="btn btn-secondary mt-4">Volver al Inicio</a>
+</div>
+</body>
+</html>

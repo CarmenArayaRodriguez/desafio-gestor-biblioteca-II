@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Libros</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1>Lista de Libros</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Título</th>
+            <th>Autor</th>
+            <th>Disponible</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="libro : ${libros}">
+            <td th:text="${libro.id}"></td>
+            <td th:text="${libro.title}"></td>
+            <td th:text="${libro.author}"></td>
+            <td th:text="${libro.isAvailable ? 'Sí' : 'No'}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <a href="/" class="btn btn-secondary mt-4">Volver al Inicio</a>
+</div>
+</body>
+</html>
